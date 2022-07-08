@@ -1,0 +1,17 @@
+{
+  "name": "easyml4j.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:easyml4j/easyml4j.github.io.git",
+  "author": "chenxilin <635943647@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  }
+}
