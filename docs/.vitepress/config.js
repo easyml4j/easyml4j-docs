@@ -1,4 +1,19 @@
+import mathjax3 from "markdown-it-mathjax3";
+
+const customElements = ["mjx-container"];
 export default {
+  markdown: {
+    config: (md) => {
+      md.use(mathjax3);
+    }
+  },
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => customElements.includes(tag)
+      }
+    }
+  },
   title: "VitePress",
   lang: "en-US",
   description: "Vite & Vue powered static site generator.",
@@ -27,30 +42,32 @@ export default {
     sidebar: [
       {
         text: "前言",
+        // 折叠目录
+        collapsible: true,
         items: [
           { text: "简介", link: "/index" },
-          { text: "快速入门", link: "/快速入门" }
+          { text: "快速入门", link: "/getting-started" }
         ]
       },
       {
         text: "线性模型",
         items: [
-          { text: "普通最小二乘法", link: "/index" },
-          { text: "岭回归", link: "/快速入门" }
+          { text: "普通最小二乘法", link: "/md/线性模型/普通最小二乘法" },
+          { text: "岭回归", link: "/md/线性模型/岭回归" }
         ]
       },
       {
         text: "树模型",
         items: [
           { text: "决策树", link: "/index" },
-          { text: "梯度提升树", link: "/快速入门" }
+          { text: "梯度提升树", link: "/getting-started" }
         ]
       },
       {
         text: "集成模型",
         items: [
           { text: "普通最小二乘法", link: "/index" },
-          { text: "岭回归", link: "/快速入门" }
+          { text: "岭回归", link: "/getting-started" }
         ]
       }
     ]
